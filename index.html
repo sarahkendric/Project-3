@@ -4,18 +4,18 @@
 	<head>
 		<title>Project 3</title>
 		<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" type="image/png" href="favicon.png">
 
 		<style>
 
 			body {
 				margin: 0;
-				height: 6000px;
+				height: 6700px;
 				background: linear-gradient(180deg, #BACAD6 0%, #DFEDF4 26.04%, #A0B6B0 51.56%, #CDE3D6 75.52%, #D7E3CD 100%);
-				
+				overflow-x: hidden;
 			}
 
 			a:hover {
-				font-size: 20px;
 				color: white;
 			}
 
@@ -51,6 +51,16 @@
 
 				color: #000000;
 			}
+
+			#clouds {
+				position: -webkit-sticky;
+				position: sticky;
+				/*this "top" declares the y position where your clouds stop
+				when it is 0, it stays where it is now, negative goes beyond the top*/
+				top: -200px; 
+				width: 100%;
+			}
+
 
 			#cloud1 {
 				position: absolute;
@@ -90,7 +100,7 @@
 			#intro {
 				display: flex;
 				align-items: flex-start;
-				height: 600px;
+				height: 550px;
 			}
 
 			.question {
@@ -102,7 +112,8 @@
 				color: #000000;
 				text-align: left;
 				width: 55vw;
-				margin-left: 3vw;
+				margin-left: 0vw;
+				z-index: auto;
 			}
 
 			.answer {
@@ -110,15 +121,104 @@
 				font-style: normal;
 				font-weight: normal;
 				font-size: 14px;
-				line-height: 119.3%;
+				line-height: 1.3em;
 				color: #000000;
-				margin-left: 20vw;
-				text-align: right;
+				margin-left: 10vw;
+				text-align: left;
+				z-index: auto;
 			}
 
-			#section1 {
-				padding: 7vw;
+			.section {
+				padding: 11vw;
+				z-index: auto;
 			}
+
+			.audio {
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+				width: 350px;
+				margin-bottom: 3vh;
+				margin-right: 1vw;
+			}
+
+			#cloud4 {
+				z-index: -2;
+				margin-top: -35vh;
+				margin-bottom: -20vh;
+				margin-left: -18vw;
+				opacity: 75%;
+				
+			}
+
+			#cloud5 {
+				z-index: -2;
+				margin-top: 250vh;
+				margin-left: -30vw;
+				opacity: 70%;
+			}
+
+			#section2 {
+				margin-top: -15vh;
+				z-index: auto;
+				position: absolute;
+			}
+
+			#section3 {
+				margin-top: -35vh;
+				z-index: auto;
+				position: absolute;
+			}
+
+			audio {
+				height: 40px;
+				margin-bottom: 3vh;
+			}
+
+			#mydiv {
+			  position: absolute;
+			  z-index: 9;
+			  background-color: #BACAD6;
+			  text-align: left;
+			  width: 400px;
+			  height: 250px;
+			  left: 900px;
+				top: 490px;
+				font-family: Belda;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 1.3em;
+				padding: 30px;
+				 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  		}
+
+  		#mydiv2 {
+			  position: absolute;
+			  z-index: 9;
+			  background-color: #BACAD6;
+			  text-align: left;
+			  width: 450px;
+			  height: 400px;
+			  left: 250px;
+				top: 6080px;
+				font-family: Belda;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 16px;
+				line-height: 1.5em;
+				padding: 30px;
+				overflow: scroll;
+				 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  		}
+
+  		h1 {
+  			font-family: Mason Serif OT;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 25px;
+				line-height: 95%;				
+				text-align: center;
+				color: #000000;
+  		}
 
 
 		</style>
@@ -126,6 +226,12 @@
 	</head>
 
 	<body>
+
+		<div id="mydiv">
+
+  		<p>Caroline Polachek is a musician and songwriter based in Brooklyn. She was the frontwoman for Chairlift from 2005 until 2017, and released her debut solo album, Arcadia, under the name Ramona Lisa in 2014. She wrote and produced Beyoncé’s 2013 single “No Angel.” Her new solo album, Drawing The Target Around The Arrow, premieres with this discussion. She’s releasing it on Panonica, a subsidiary of Bella Union, under her initials, CEP. The label’s run by her friend, Mark Byrne. She notes: “The only other thing released on it is Ramona Lisa, so it's essentially an art project.”</p>
+		</div>
+
 		<div id="intro">
 			<div id="articletitle">
 				<div id="caroline">Caroline Polacheck</div>
@@ -138,7 +244,14 @@
 			</div>
 		</div>
 
-		<div id="section1">
+
+		<div class="section" id="section1">
+
+			<img class="audio" id="audio1" src="pavillion.png">
+			<audio controls>
+  			<source src="lillian.mp3" type="audio/mpeg">
+			</audio>
+
 			<div class="question">
 				<p>You’re known as a singer. I’m interested in your decision to do something without vocals. The record’s minimal. It’s not pop. You described it as something for dance performances or yoga or just walking.</p>
 			</div>
@@ -153,6 +266,7 @@
 
 				Naturally I did want to experiment with putting vocals on it because that’s sort of what I do. I tried half the record with vocals on it. I actually recorded it and I realized the whole thing falls apart once you put vocals on it. It becomes distracting. For me, it takes the pleasure out of it because I’m suddenly hearing myself. It loses 	its conceptual purity.</p>
 		</div>
+		<br><br>
 		<div class="question">
 			<p>Where's the title from?</p>
 		</div>
@@ -163,6 +277,256 @@
 			Making these pieces in a very intuitive way was essentially “shooting the arrow” where it wanted to go, then drawing the target around it.
 			<a>It’s about honoring your impulses and working with what you have in front of you.</a></p>
 		</div>
+		<br><br>
+		<div class="question">
+			<p>For the release, are you going to include a description regarding your intentions behind it? “Hey, here’s some suggestions on how to use this thing…”</p>
+		</div>
+		<div class="answer">
+			<p>At the beginning, that’s what I wanted to do, and the more I thought about it, the more I became aware that so much advertising language now is just telling people what to do. You’re on the subway, it’ll say, “Do this. Don’t do this.” Like the Nike slogan, “Just do it.” Being surrounded by that kind of language is really oppressive. <a>I was thinking to myself, “Well if this music will be useful to people, they’re gonna hear the use for it right away. They’re gonna just do it. They’re just gonna use it.”</a>
+			I also realized that the things I use it for might not be what other people use it for. I didn’t want to necessarily plant the seed that this is a relaxing record. Some people might use it for weight lifting. I wanted to leave the door open.
+			Ideally it would be appropriated in all sorts of ways… used by physical therapists and also under a really hard rap verse. That would be ideal.</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>You wrote a song for Beyoncé a couple years ago. Chairlift, your main project, recently broke up, but you’re doing a final tour soon. Both of those things are situated more in the pop realm. How do you imagine people viewing the shift into something experimental?</p>
+		</div>
+		<div class="answer">
+			<p>I’ve tried to not worry about that. I have faith that new work connects the dots of past work. I think one of the big disconnects for people is gonna be that up until this point it’s never really been clear what my relationship with production has been, compared to the clear authorship of singing. Especially when there are other names in it, especially men’s names, listeners aren’t sure who’s doing what.</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>This is something Björk has talked about—when people went around saying Arca produced the last album.</p>
+		</div>
+		<div class="answer">
+			<p>It’s totally true. I was at a party over the weekend. The Haxan Cloak came up in conversation and a good friend of mine, who’s a massive Björk fan, contextualized Haxan Cloak to someone else by saying, “Oh, he produced the last Bjork record,” and I said, “No, he did not! He mixed it!”
+			This was a woman who said this, and she’s a feminist, and she’s a producer, the last person who should be making that assumption. But I think, unfortunately, history still informs a lot of how we see archetypes. Like, “Oh, he’s a man who was involved, he must have been a producer.” And I think because that’s still the status quo, it’s not gonna change until we get a ton more examples of females as engineers and producers.
+			Chairlift gets that all the time, and Patrick’s really good about saying, “Actually, we both produced this.” <a>And that assumption isn’t Patrick’s fault whatsoever. More often than not, journalists will also say that Patrick produced “No Angel” and I wrote it, when actually I did both.</a></p>
+		</div>
+	</div>
+
+<img id="cloud4" src="cloud2.png">
+	<div class="section" id="section2">
+
+		<img class="audio" id="audio2" src="wait.png">
+		<audio controls>
+  			<source src="wait.mp3" type="audio/mpeg">
+			</audio>
+
+		<div class="question">
+			<p>Do you imagine that people will recognize you more as a producer now?</p>
+		</div>
+		<div class="answer">
+			<p>My hope is that people will sort of realize that I’ve been in there the whole time. And also that it might make people look at what I do next a little bit differently.</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>You’re releasing it under your initials. What was your decision to do that versus making it another Ramona Lisa project?</p>
+		</div>
+		<div class="answer">
+			<p>Ramona Lisa was a narrative and theatrical project, with a set of metaphors and imagery that glued it all together. It was important for me to finish that project a year after it surfaced, so for the whole thing to have a start date and a death date. <a>That was actually a huge motivating factor, knowing that it was going to have this death. Needing to check off all the boxes before that happened.</a> 
+			I didn’t want to blend that pastoral, feminized world with this album. This feels much more neutral to me, and much more open, and kind of much less referential. Not to say that one’s better than the other. I just wanted to keep them separated. 
+			There’s a lack of agenda here. I’m not trying to insert a personality in any way. The last two records I made were deeply personal and diaristic and emotional, and it was nice to take a break from talking at the listener with this one. That’s also why I wanted to give away the record for free. It feels more like a gift, rather than, “I have made this tower in my likeness, admire it now!” It was like, “Here is something you can use if you’d like to. It’s there.”
+			<a>Sometimes I worry I’m adding to the devaluing of music by giving away a record for free, but I do feel like that’s the most agency I have at this point, is to not charge. And maybe that’s sad, or indicative of something that the most significant action I can take is to give it away!</a></p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>When you’re working on a project, do you find it’s useful to set parameters? Like the Ramona Lisa project taking exactly one year. Or this came about by taking a break from something else. You’re productive as a musician—do you need these kind of things to keep you going?</p>
+		</div>
+		<div class="answer">
+			<p><a>Limitations are definitely inspiring.</a> Because I jump around so much, I find limitations really give strength to projects. It forces a through-line. With Ramona Lisa, the restriction was making the whole thing on my laptop for no money, and then with this, it was like, “Okay, can we do that but now restricted to one instrument?” 
+			The big surprise to me, looking back at it once it was all mastered, was that the most rudimentary music I’ve ever made is the most futuristic. It’s kind of a paradox, because I’ve always thought of “futuristic music” as the presence of strange new sounds, not the absence of familiar ones.</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>You’re not going into something knowing exactly what’s going to happen; it’s more like a learning experience.</p>
+		</div>
+		<div class="answer">
+			<p>Definitely. <a>I keep learning over and over and over again in different ways to just obey my intuition, and if I like the results, I don’t need to answer any other questions. </a></p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>You said you wanted to remove the baggage from the collection. How did you decide to title the songs versus leaving them untitled?</p>
+		</div>
+		<div class="answer">
+			<p>Using titles at all was tricky. At first I was just naming things by the time of day that I made them, and then I started realizing that they evoked these really consistent images. I actually doubted at first whether or not I should include those visuals because I thought I might prevent people from seeing something else. But then I just realized it’s so much fun! It’s so much fun to bridge that gap between a description and a sound. So why would I not?</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>You have the Chairlift farewell tour later on in 2017. Does it feel weird to be making new stuff, and then going back to play older music?</p>
+		</div>
+		<div class="answer">
+			<p>It doesn’t feel weird. I’ve always, for better or for worse, been working on two things at once, and that’s kind of the way I like it. So, it feels kind of beautiful to just be split—I’m actually split three ways right now, because obviously the Chairlift wrap-up is coming, and that feels like a nod to the past, and then this record’s coming out.
+			I’m also knee-deep into the next record that I’m working on, which is a vocal record. In a way, this record feels like an intermission, like a bit of a silence between these two other periods.</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>Do you plan to play the CEP songs live?</p>
+		</div>
+		<div class="answer">
+			<p>Yes! I’m performing it twice at National Sawdust with a choir, so all this is being arranged with a 12-piece vocal ensemble, which is going to sound amazing. Even just working with the choral director, Vince Peterson… It’s been interesting looking at these things in terms of entertainment, because you have people sitting in a room. There’s a stage. There’s an expectation of entertainment. That’s already the opposite of what this music was trying to do. 
+			So, I’m trying to see how little we can get away with in terms of… dynamics. Can we be so loyal to the repetition within these pieces, and make it so beautiful, that it’s enough on it’s own?</p>
+		</div>
+	</div>
+
+<img id="cloud5" src="cloud5.png">
+	<div class="section" id="section3">
+		<img class="audio" id="audio3" src="here.png">
+		<audio controls>
+  			<source src="here.mp3" type="audio/mpeg">
+			</audio>
+
+		<div class="question">
+			<p>With the new stuff you’re working on, are you continuing to do more challenging, minimal stuff, or do you find yourself wanting to move more into a pop realm?</p>
+		</div>
+		<div class="answer">
+			<p>Part of what I love about pop is the challenging, minimal aspect of it. The best pop productions are lean, the best pop songs are minimal. So, for me, they’re very related.
+			The thing that I’m really interested at this point is just getting straight to an emotional core in lyric writing and in melodies, and not getting lost in the sauce—because believe me I love getting lost in the sauce. Really stripping things back requires the most bravery and the most focus.   I’ve been writing on piano recently, which is a new thing, and kind of terrifying for me because there’s nothing to hide behind. I’ve been performing a little bit on piano, too, and that, to me, feels totally related to this record, just how timeless and pure it is.</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>As someone who’s done a lot of different kinds of things, and has a ton of experience in different musical realms, have you ever thought of teaching music?</p>
+		</div>
+		<div class="answer">
+			<p><a>I’m actually working on a file that I’ve been adding to for the last year or so called, “Things I wish I’d known as a young musician.” </a> Maybe one day I’ll publish it, but I keep thinking of things in the shower, like, “Oh, I gotta add that. Oh, I gotta add that.” It’s mostly meant for a female musician, because we deal with a different kind of thing, at least for now. But yeah, I think about that all the time, and I could see myself teaching at some point in the future.
+			I feel like I’ve never properly had a mentor in this industry. The closest person that I can call a mentor is my opera teacher, Pam Kuhn. The work I do with her is a totally different style of singing than I do for my own work that I release, and I love that separation, that kind of zero-baggage zone. She’s become like a mentor to me, but interestingly, she can’t give me advice on the sort of industry side because she’s coming from a very different world. I really envy people who have that.</p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>Would you ever write an opera?</p>
+		</div>
+		<div class="answer">
+			<p>If there was a story, a complex story that all fit together, that was really possessing me, then yes. I do sometimes approach songs like arias, and a lot of the last Chairlift record, I approached as straight-up as musical theater! I guess I really get off on cross-training, and seeing one genre through the lens of another. </p>
+		</div>
+		<br><br>
+		<div class="question">
+			<p>You seem to be in a good spot. You’ve had a successful band, you wrote a song for arguably one of the biggest pop stars in the world, and now you’re able to do an experimental record. Do you ever think “I want to just try a bunch of different things?"</p>
+		</div>
+		<div class="answer">
+			<p>I was thinking about this yesterday. I realized that a lot of people have been saying, “Oh, that’s so you, that’s so you,” and more often than not, they’re right. That’s the great thing about having enough work finally be out there that people understand. The fact that the work starts to take on a life of its own and people are processing it, it’s really exciting and gives me a lot of confidence. There’s less and less you need to explain.
+			<a>I wish, as a younger artist, I’d known that as you have more work out there, you have this base to lean on, and there’s this context for things that you do, which is both exciting and a relief.</a></p>
+		</div>
+	</div>
+
+	<div id="mydiv2">
+
+  		<h1>A few things I wish I’d known when I was just starting out by<br> Caroline Polachek:</h1>
+  		◦ You can always say no to being photographed in front of a logo.<br>
+			◦ You can bring your own recorder to record interviews.<br>
+			◦ It’s lovely to tell anyone working at the venue “thank you for having us” on the way out.<br>
+			◦ The audience is just as vulnerable as you are.<br>
+			◦ No such thing as a show that doesn’t matter.<br>
+			◦ Take archiving seriously.<br>
+			◦ Don’t insult your past work, even if you can’t relate to it anymore.<br>
+			◦ References are useful for communicating, but they can be a trap.<br>
+			◦ When you find something that works, repeat it shamelessly.<br>
+			◦ Get the makeup off as soon as you can.<br>
+			◦ Here’s how to sleep on the plane:<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* glass of red wine <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* earplugs <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* headphones on over the earplugs <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* Harold Budd - Avalon Sutra <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* jacket or blanket over your head and torso arms crossed and folded in front of your body, hands tucked into your snug seatbelt to support your lower back.<br>
+
+	</div>
+
+
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById("mydiv"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+
+dragElement(document.getElementById("mydiv2"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+
+
+
+
+
+
+</script>
+	
 
 		
 		
